@@ -9,8 +9,9 @@ public class Horse extends ChessPiece {
 
     @Override
     public String getColor() {
-        return color;
+        return super.getColor();
     }
+
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
