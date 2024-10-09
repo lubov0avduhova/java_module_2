@@ -2,8 +2,8 @@ package org.example.chess_pieces;
 
 import org.example.ChessBoard;
 
-public class Horse extends ChessPiece {
-    public Horse(String color) {
+public class Pawn extends ChessPiece {
+    public Pawn(String color) {
         super(color);
     }
 
@@ -11,12 +11,6 @@ public class Horse extends ChessPiece {
     public String getColor() {
         return super.getColor();
     }
-
-/*
-
-  мог ходить только буквой «Г».
- Если конь может пройти от точки (line, column) до точки (toLine, toColumn) по всем правилам (указанным выше), то функция вернет true, иначе — false
- */
 
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
@@ -58,13 +52,11 @@ public class Horse extends ChessPiece {
             }
         }
         return false; // Если не выполняется ни одно из условий, ход невозможен
+
     }
-
-
 
     @Override
     public String getSymbol() {
-        return "H";
+        return "";
     }
 }
-
