@@ -23,7 +23,7 @@ public class Pawn extends ChessPiece {
             return false;
         }
 
-        // Проверям может ли ходить пешка буквой "Г"
+        // Проверяем может ли ходить пешка буквой "Г"
         if (getColor().equals("White")) {
             if (toLine > line) { // Белая пешка ходит вверх
                 // Проверяем, первый ли ход (на 2 клетки)
@@ -57,6 +57,6 @@ public class Pawn extends ChessPiece {
 
     @Override
     public String getSymbol() {
-        return "";
+        return "P";
     }
 }
