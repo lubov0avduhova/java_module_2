@@ -3,7 +3,7 @@ package org.example.chess_pieces;
 import org.example.ChessBoard;
 
 public abstract class ChessPiece {
-    private String color;
+    private final String color;
     private boolean check;
 
     public ChessPiece(String color) {

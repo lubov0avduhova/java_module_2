@@ -31,9 +31,7 @@ public class Pawn extends ChessPiece {
                     return true;
                 }
                 // Проверяем, обычный ли ход (на 1 клетку)
-                if (toLine == line + 1 && column == toColumn) {
-                    return true;
-                }
+                return toLine == line + 1 && column == toColumn;
             } else {
                 return false; // Белая пешка не может ходить назад
             }
@@ -44,14 +42,11 @@ public class Pawn extends ChessPiece {
                     return true;
                 }
                 // Проверяем, обычный ли ход (на 1 клетку)
-                if (toLine == line - 1 && column == toColumn) {
-                    return true;
-                }
+                return toLine == line - 1 && column == toColumn;
             } else {
                 return false; // Черная пешка не может ходить назад
             }
-        }
-        return false; // Если не выполняется ни одно из условий, ход невозможен
+        }// Если не выполняется ни одно из условий, ход невозможен
 
     }
 

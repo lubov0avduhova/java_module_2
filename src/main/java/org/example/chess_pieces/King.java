@@ -26,11 +26,7 @@ public class King extends ChessPiece {
         }
 
         // Проверяем может ли ходить Король в любую сторону на 1
-        if ((Math.abs(toLine - line) <= 1) && (Math.abs(toColumn - column) <= 1)) {
-            return true;
-        }
-
-        return false; // Если не выполняется ни одно из условий, ход невозможен
+        return (Math.abs(toLine - line) <= 1) && (Math.abs(toColumn - column) <= 1);// Если не выполняется ни одно из условий, ход невозможен
     }
 
 

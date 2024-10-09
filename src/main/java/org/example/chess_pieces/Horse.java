@@ -13,7 +13,6 @@ public class Horse extends ChessPiece {
     }
 
 
-
     @Override
     public boolean canMoveToPosition(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         // Проверяем, не находится ли слон в той же точке
@@ -25,10 +24,15 @@ public class Horse extends ChessPiece {
             return false;
         }
 
-        // Проверяем может ли ходить конь буквой "Г"
+        // Проверка на то, что ход коня соответствует "Г" -образному движению
         if ((Math.abs(toLine - line) == 2 && Math.abs(toColumn - column) == 1) ||
-                Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2) {
-            return true;
+                (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2)) {
+
+            // Проверка на то, что на клетку, куда собирается пойти конь, не стоит фигура своего цвета
+            return chessBoard.board[toLine][toColumn] == null || !chessBoard.board[toLine][toColumn].getColor().equals(getColor());
+
+
+            // Конь может прыгать, поэтому эта проверка не нужна
         }
         return false; // Если не выполняется ни одно из условий, ход невозможен
     }
